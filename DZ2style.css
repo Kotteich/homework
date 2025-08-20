@@ -1,0 +1,103 @@
+body {
+    font-family: 'Times New Roman', Times, serif;
+    background-color: rgba(239, 244, 248, 0.945);
+    font-size: 20px;
+    line-height: 25px;
+}
+
+.container {
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 0 10px rgba(12, 11, 11, 0.267);
+    border-radius: 1%;
+    margin: 20px;
+    padding: 20px;
+    
+}
+
+#header {
+    background-color: rgba(35, 35, 112, 0.979);
+    text-align: center;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 2%;
+    color: #fff;
+}
+
+.h {
+    color: rgb(65, 65, 218);
+}
+
+#spec::first-letter {
+    font-size: 50px;
+
+}
+
+h2+p {
+    font-style: oblique;
+}
+
+h3~p {
+    background-color: rgba(114, 116, 116, 0.322);
+}
+
+#ul>li {
+    border: 1px solid #443f3f2a;
+    text-align: left;
+    list-style: none;
+    padding-left: 20px;
+}
+
+ul {
+    padding-left: 0;
+}
+
+p>a {
+    color: red;
+}
+
+#p1 {
+    font-family: Georgia, 'Times New Roman', Times, serif
+}
+
+#p2 {
+    font-size: larger;
+
+}
+
+#p3 {
+    font-weight: 700
+}
+
+#p4 {
+    font-style: italic
+}
+
+#p5 {color: #3498db}
+
+#p6 {text-align: center}
+
+#p7 {text-decoration: underline}
+
+#p8 {line-height: 2}
+
+#p9 {letter-spacing: 2px}
+
+#p10 {text-transform: uppercase}
+
+#p11 {text-shadow: 1px 1px 2px rgb(87, 82, 82);}
+
+#span {
+    background-color: rgb(236, 196, 63);
+    text-transform: uppercase;
+    color: #3498db;
+    font-weight: 700;
+}
+
+
+
+.footer {
+    color: rgb(112, 111, 110);
+    text-align: center;
+    border-top: 1px solid rgba(128, 128, 128, 0.568);
+    padding-top: 15px;
+}
