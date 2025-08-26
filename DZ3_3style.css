@@ -1,0 +1,19 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+section {
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 0 10px rgba(12, 11, 11, 0.267);
+    border-radius: 2%;
+    margin: 20px;
+    padding: 20px;
+}
+
+h2 {
+    color: rgb(21, 27, 82);
+}
+
+.bgc-solid {
+    background-color: rgba(17, 17, 212, 0.664);
+}

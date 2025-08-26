@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Фоны в CSS - Комбинированный пример</title>
+    <link rel="stylesheet" href="DZ3_3style.css">
+    </head>
+<body>
+    <div>
+        <h1>Фоны в CSS - Комбинированный пример</h1>
+        
+        <!-- 1. Сплошной цвет фона -->
+        <section class="bgc-solid">
+            <h2>1. Сплошной цвет фона (background-color)</h2>
+            <p>Элемент с заданным сплошным цветом фона.</p>
+            <div class="bgc-solid-1">background-color: #3498db;</div>
+            <div class="bgc-solid-2">background-color: #3498db</div>
+            <div class="bgc-solid-3">background-color: rgba(231, 76, 60, 0.7)</div>
+            <div class="bgc-solid-4">background-color: hsl(120, 76%, 50%)</div>
+        </section>
+        
+        <!-- 2. Фоновое изображение -->
+        <section class="block">
+            <h2 class="bg-image-header">2. Фоновое изображение (background-image)</h2>
+            <p>Элемент с фоновым изображением, которое масштабируется и центрируется.</p>
+            <div class="bg-image">
+                background-image: url('image.jpg');<br>
+                background-size: cover;<br>
+                background-position: center;
+            </div>
+        </section>
+        
+        <!-- 3. Градиентный фон -->
+        <section class="bg-gradient">
+            <h2>3. Градиентный фон (linear-gradient)</h2>
+            <p>Элемент с линейным градиентом в качестве фона.</p>
+            <div class="bg-linear-gradient1">background: linear-gradient(135deg, #ff7e5f, #feb47b);</div>
+            <div class="bg-linear-gradient2">linear-gradient(to right, #3498db, #2ecc71)</div>
+            <div class="bg-linear-gradient3">radial-gradient(circle, #3498db, #2c3e50)</div>
+        </section>
+        
+        <!-- 4. Повторение фона -->
+        <section>
+            <h2>4. Повторение фона (background-repeat)</h2>
+            <p>Элемент с повторяющимся фоновым изображением (паттерн).</p>
+            <div class="bg-repeat">
+                background-image: url('pattern.png');<br>
+                background-repeat: repeat;
+            </div>
+            <p>Также доступны значения: repeat-x, repeat-y, no-repeat, space, round</p>
+        </section>
+        
+        <!-- 5. Позиционирование фона -->
+        <section>
+            <h2>5. Позиционирование фона (background-position)</h2>
+            <p>Элемент с фоновым изображением, позиционированным в правом нижнем углу.</p>
+            <div class="bg-position">
+                background-image: url('logo.png');<br>
+                background-repeat: no-repeat;<br>
+                background-position: right bottom;
+            </div>
+        </section>
+        
+        <!-- 6. Размер фона -->
+        <section class="block">
+            <h2>6. Размер фона (background-size)</h2>
+            <p>Элемент с фоновым изображением, которое масштабируется с помощью background-size: cover (заполняет весь элемент).</p>
+            <div class="bg-size-cover">background-size: cover;</div>
+        </section>
+        
+        <section>
+            <h3>background-size: contain</h3>
+            <p>Элемент с фоновым изображением, которое масштабируется с помощью background-size: contain (вписывается в элемент).</p>
+            <div class="bg-size-contain1">background-size: contain;</div>
+            <div class="bg-size-contain2">
+                background-size: contain
+            </div>
+        </section>
+        
+        <!-- 7. Фиксация фона -->
+        <section class="block">
+            <h2>7. Фиксация фона (background-attachment)</h2>
+            <p>Элемент с фиксированным фоном, который остается на месте при прокрутке.</p>
+            <div class="bg-attached">
+                background-image: url('large-bg.jpg');<br>
+                background-attachment: fixed;<br>
+                background-size: cover;
+            </div>
+        </section>
+        
+        <!-- 8. Обрезка фона -->
+        <section>
+            <h2>8. Обрезка фона (background-clip)</h2>
+            <p>Определяет, как фон распространяется под границами и отступами.</p>
+            
+            <h3>border-box (по умолчанию)</h3>
+            <div class="bg-border-box">
+                <p>Фон распространяется под границами.</p>
+                <div>background-clip: border-box;</div>
+            </div>
+            
+            <h3>padding-box</h3>
+            <div class="bg-padding-box">
+                <p>Фон обрезается по внутреннему краю границы.</p>
+                <div>background-clip: padding-box;</div>
+            </div>
+            
+            <h3>content-box</h3>
+            <div class="bg-content-box">
+                <p>Фон обрезается по контенту.</p>
+                <div>background-clip: content-box;</div>
+            </div>
+        </section>
+        
+        <!-- 9. Множественные фоны -->
+        <section class="block">
+            <h2>9. Множественные фоны</h2>
+            <p>Элемент с несколькими фоновыми изображениями и градиентом.</p>
+            <div class="bg-many">
+                background: <br>
+                &nbsp;&nbsp;url('image1.png') left top no-repeat,<br>
+                &nbsp;&nbsp;url('image2.png') right top no-repeat,<br>
+                &nbsp;&nbsp;url('image3.png') left bottom no-repeat,<br>
+                &nbsp;&nbsp;url('image4.png') right bottom no-repeat,<br>
+                &nbsp;&nbsp;linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(236, 240, 241, 0.9));
+            </div>
+        </section>
+        
+        <!-- 10. Фон для текста -->
+        <section>
+            <h2>10. Фон для текста (background-clip: text)</h2>
+            <p>Применение фона только к тексту (вебкит-свойство).</p>
+            <div class="text-color">Текст с градиентным фоном</div>
+            <div class="bg-clip-text">
+                background: linear-gradient(45deg, #ff7e5f, #feb47b, #2ecc71, #3498db);<br>
+                -webkit-background-clip: text;<br>
+                background-clip: text;<br>
+                color: transparent;
+            </div>
+        </section>
+    </div>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Позиционирование в CSS</title>
+    <link rel="stylesheet" href="DZ3_2style.css">
+</head>
+
+<body>
+    <h1>Позиционирование в CSS</h1>
+
+    <!-- 1. Статическое позиционирование -->
+    <section>
+        <h2>1. Статическое позиционирование (static)</h2>
+        <p>Элементы по умолчанию имеют position: static. Свойства top/left/z-index не работают.</p>
+        <div class="static">static</div>
+        <p>Этот элемент расположен в нормальном потоке документа, несмотря на указанные top: 50px и left: 50px.</p>
+    </section>
+
+    <!-- 2. Относительное позиционирование -->
+    <section>
+        <h2>2. Относительное позиционирование (relative)</h2>
+        <p>Элемент смещается относительно своего обычного положения, но сохраняет свое место в потоке.</p>
+        <div class="relative">relative</div>
+        <p>Этот элемент смещен на 20px сверху и 30px слева от своего исходного положения.</p>
+    </section>
+
+    <!-- 3. Абсолютное позиционирование -->
+    <section>
+        <h2>3. Абсолютное позиционирование (absolute)</h2>
+        <p>Элемент изымается из потока и позиционируется относительно ближайшего позиционированного предка.</p>
+        <div class="absolute">absolute</div>
+        <p>Этот элемент позиционируется относительно section (которая имеет position: relative).</p>
+    </section>
+
+    <!-- 4. Фиксированное позиционирование -->
+    <section>
+        <h2>4. Фиксированное позиционирование (fixed)</h2>
+        <p>Элемент фиксируется относительно окна просмотра и не перемещается при прокрутке.</p>
+        <div class="fixed">↑</div>
+        <p>Круглая кнопка в правом нижнем углу экрана останется на месте при прокрутке страницы.</p>
+    </section>
+
+    <!-- 5. Липкое позиционирование -->
+    <section>
+        <h2>5. Липкое позиционирование (sticky)</h2>
+        <div class="sticky">Липкий заголовок (прокрутите страницу)</div>
+        <p>Этот заголовок "прилипнет" к верхней части окна при прокрутке.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nisl eget ultricies tincidunt, nisl
+            nisl aliquam nisl, eget ultricies nisl nisl eget nisl. Sed do eiusmod tempor incididunt ut labore et dolore
+            magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+            commodo consequat.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nisl eget ultricies tincidunt, nisl
+            nisl aliquam nisl, eget ultricies nisl nisl eget nisl. Sed do eiusmod tempor incididunt ut labore et dolore
+            magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+            commodo consequat.</p>
+    </section>
+
+    <!-- 6. Z-index - порядок слоев -->
+    <section>
+        <h2>6. Z-index - порядок слоев</h2>
+        <p>Определяет порядок наложения позиционированных элементов (большее значение = выше).</p>
+        <div>
+            <div class="z-index1">z-index: 1</div>
+            <div class="z-index2">z-index: 2</div>
+            <div class="z-index3">z-index: 3</div>
+        </div>
+        <p>Элементы с большим z-index отображаются поверх элементов с меньшим значением.</p>
+    </section>
+
+    <!-- 7. Float и clear -->
+    <section>
+        <h2>7. Float и clear</h2>
+        <div class="float left"></div>
+        <p>Элемент с float: left обтекается текстом справа. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Nullam auctor, nisl eget ultricies tincidunt, nisl nisl aliquam nisl, eget ultricies nisl nisl eget nisl.
+        </p>
+
+        <div class="float right"></div>
+        <p>Элемент с float: right обтекается текстом слева. Sed do eiusmod tempor incididunt ut labore et dolore magna
+            aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat.</p>
+
+        <p>После этого параграфа обтекание сбрасывается благодаря clearfix.</p>
+    </section>
+
+    <!-- Дополнительные примеры -->
+    <section>
+        <h2>Практические примеры</h2>
+
+        <h3>Выпадающее меню</h3>
+        <div class="menu">
+            <button class="menu button">Меню</button>
+            <div class="menu options">
+                <a href="#">Пункт 1</a>
+                <a href="#">Пункт 2</a>
+                <a href="#">Пункт 3</a>
+            </div>
+        </div>
+
+        <h3>Модальное окно</h3>
+        <button onclick="document.getElementById('modal').style.display='flex'">Открыть модальное окно</button>
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn" onclick="document.getElementById('modal').style.display='none'">×</span>
+                <h3>Модальное окно</h3>
+                <p>Это пример модального окна с position: fixed.</p>
+            </div>
+        </div>
+
+        <h3>Индикатор прогресса</h3>
+        <div class="progressbar outside">
+            <div class="progressbar inside"></div>
+        </div>
+        <p>Полоса прогресса использует position: absolute внутри position: relative контейнера.</p>
+    </section>
+</body>
+
+</html>

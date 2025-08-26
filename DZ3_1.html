@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Блоки и отступы в CSS</title>
+    <link rel="stylesheet" href="DZ3_1style.css">
+</head>
+
+<body>
+    <h1>Блоки и отступы в CSS</h1>
+
+    <!-- 1. Ширина и высота -->
+    <section>
+        <h2>1. Ширина и высота (width/height)</h2>
+        <div class="width-height">
+            <div class="width-height fixed">
+                Фиксированные размеры: 300×150px
+            </div>
+
+            <div class="width-height min-max">
+                Минимальная ширина: 200px<br>
+                Максимальная ширина: 80%<br>
+                Минимальная высота: 50px
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. Margin - внешние отступы -->
+    <section>
+        <h2>2. Внешние отступы (margin)</h2>
+        <div class="margin">
+            <div class="margin all">
+                margin: 20px (все стороны)
+            </div>
+
+            <div class="margin vertical-horizontal">
+                margin: 10px 30px (вертикально | горизонтально)
+            </div>
+
+            <div class="margin individual">
+                Индивидуальные отступы:<br>
+                margin-top: 5px<br>
+                margin-right: 15px<br>
+                margin-bottom: 25px<br>
+                margin-left: 35px
+            </div>
+
+            <div class="margin auto">
+                margin: 0 auto (центрирование)
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Padding - внутренние отступы -->
+    <section>
+        <h2>3. Внутренние отступы (padding)</h2>
+        <div class="padding">
+            <div class="padding all">
+                padding: 20px (все стороны)
+            </div>
+
+            <div class="padding vertical-horizontal">
+                padding: 10px 30px (вертикально | горизонтально)
+            </div>
+
+            <div class="padding individual">
+                Индивидуальные отступы:<br>
+                padding-top: 5px<br>
+                padding-right: 15px<br>
+                padding-bottom: 25px<br>
+                padding-left: 35px
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Границы -->
+    <section>
+        <h2>4. Границы (border)</h2>
+        <div class="border">
+            <div class="border solid">
+                border: 3px solid #3498db
+            </div>
+
+            <div class="border dashed">
+                border: 2px dashed #e74c3c
+            </div>
+
+            <div class="border dotted">
+                border: 1px dotted #2ecc71
+            </div>
+
+            <div class="border different">
+                Разные границы для каждой стороны
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Скругление углов -->
+    <section>
+        <h2>5. Скругление углов (border-radius)</h2>
+        <div class="border-radius">
+            <div class="border-radius small">
+                border-radius: 5px
+            </div>
+
+            <div class="border-radius larger">
+                border-radius: 15px
+            </div>
+
+            <div class="border-radius large">
+                border-radius: 30px
+            </div>
+
+            <div class="border-radius circle">
+                Круг (50%)
+            </div>
+
+            <div class="border-radius uneven">
+                Неравномерное скругление (15px 5px 30px 50px)
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Тень блока -->
+    <section>
+        <h2>6. Тень блока (box-shadow)</h2>
+        <div class="box-shadow">
+            <div class="box-shadow simple">
+                Простая тень (3px 3px 5px)
+            </div>
+
+            <div class="box-shadow blurred">
+                Тень с размытием (0 0 15px)
+            </div>
+
+            <div class="box-shadow many">
+                Несколько теней
+            </div>
+
+            <div class="box-shadow inset">
+                Внутренняя тень (inset)
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. Тип отображения -->
+    <section>
+        <h2>7. Тип отображения (display)</h2>
+        <div class="display container">
+            <div class="display">
+                <div class="display block">display: block</div>
+                <span class="display block">span с display: block</span>
+
+                <p>
+                    <span class="display inline">display: inline</span>
+                    <span class="display inline">еще один inline</span>
+                </p>
+
+                <div>
+                    <span class="display inline-block">display: inline-block</span>
+                    <span class="display inline-block">еще один inline-block</span>
+                </div>
+
+                <div class="display none">Этот блок не отображается (display: none)</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. Видимость -->
+    <section>
+        <h2>8. Видимость (visibility)</h2>
+        <div class="visibility">
+            <div class="visibility on">
+                Видимый элемент
+            </div>
+
+            <div class="visibility hidden">
+                Скрытый элемент (visibility: hidden)
+            </div>
+
+            <div class="visibility on">
+                Видимый элемент (обратите внимание на место, которое занимает скрытый элемент)
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. Переполнение -->
+    <section>
+        <h2>9. Переполнение (overflow)</h2>
+        <div class="overflow">
+            <div class="overflow visible">
+                <h3>overflow: visible</h3>
+                Этот текст выходит за границы блока, потому что он слишком длинный для заданных размеров контейнера.
+            </div>
+
+            <div class="overflow hidden">
+                <h3>overflow: hidden</h3>
+                Этот текст обрезается, потому что он слишком длинный для заданных размеров контейнера.
+            </div>
+
+            <div class="overflow scroll">
+                <h3>overflow: scroll</h3>
+                Этот текст можно прокрутить, потому что он слишком длинный для заданных размеров контейнера.
+            </div>
+
+            <div class="overflow auto">
+                <h3>overflow: auto</h3>
+                Этот текст можно прокрутить только при необходимости.
+            </div>
+        </div>
+    </section>
+
+    <!-- 10. Box-sizing -->
+    <section>
+        <h2>10. Box-sizing</h2>
+        <div class="box-sizing">
+            <div class="box-sizing content-box">
+                <h3>box-sizing: content-box (по умолчанию)</h3>
+                Ширина: 200px + padding: 20px + border: 5px = 250px
+            </div>
+
+            <div class="box-sizing border-box">
+                <h3>box-sizing: border-box</h3>
+                Ширина: 200px (включая padding и border)
+            </div>
+        </div>
+    </section>
+
+    <!-- Комбинированный пример -->
+    <section>
+        <h2>Комбинированный пример: карточка</h2>
+        <div class="card">
+            <div class="top"></div>
+            <div class="card content">
+                <h3>Название карточки</h3>
+                <p>Это пример карточки, демонстрирующий комбинированное использование различных свойств блоков и
+                    отступов.</p>
+                <a href="#" class="button">Кнопка</a>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
