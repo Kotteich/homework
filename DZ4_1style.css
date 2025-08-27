@@ -1,0 +1,285 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.5;
+}
+
+section {
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 0 10px rgba(12, 11, 11, 0.267);
+    border-radius: 2%;
+    margin: 20px;
+    padding: 20px;
+}
+
+h2 {
+    color: rgb(21, 27, 82);
+}
+
+.container {
+    border: 2px dashed rgb(44, 44, 221);
+    padding: 5px;
+    color: #fff;
+    display: flex;
+}
+
+.one {
+    background-color: rgba(0, 132, 255, 0.822);
+    align-content: center;
+    text-align: center;
+    min-width: 50px;
+    min-height: 70px;
+    padding: 10px;
+}
+
+.two {
+    background-color: rgba(255, 0, 0, 0.788);
+    align-content: center;
+    text-align: center;
+    min-width: 50px;
+    min-height: 70px;
+    padding: 10px;
+}
+
+.three {
+    background-color: rgba(44, 206, 44, 0.788);
+    align-content: center;
+    text-align: center;
+    min-width: 50px;
+    min-height: 70px;
+    padding: 10px;
+}
+
+.four {
+    background-color: rgba(206, 149, 44, 0.788);
+    align-content: center;
+    text-align: center;
+    min-width: 50px;
+    min-height: 70px;
+    padding: 10px;
+}
+
+.flexbox {
+    display: flex;
+}
+
+.row {
+    flex-direction: row
+}
+
+.row-reverse {
+    flex-direction: row-reverse;
+}
+
+.column {
+    flex-direction: column;
+}
+
+.column-reverse {
+    flex-direction: column-reverse;
+}
+
+.flex-start {
+    justify-content: flex-start;
+}
+
+.flex-end {
+    justify-content: flex-end;
+}
+
+.center {
+    justify-content: center;
+}
+
+.space-between {
+    justify-content: space-between;
+}
+
+.space-around {
+    justify-content: space-around;
+
+}
+
+.space-evenly {
+    justify-content: space-evenly;
+}
+
+.align {
+    height: 150px;
+}
+
+.align-items-stretch {
+    align-items: stretch;
+}
+
+.align-items-flex-start {
+    align-items: flex-start;
+}
+
+.align-items-center {
+    align-items: center;
+}
+
+.align-items-flex-end {
+    align-items: flex-end;
+}
+
+.align-items-baseline {
+    align-items: baseline;
+}
+
+.align-items-baseline .two {
+    padding-top: 30px;
+    font-size: 24px;
+}
+
+.flex-wrap>.one,
+.flex-wrap>.two,
+.flex-wrap>.three {
+    width: 200px;
+}
+
+.flex-wrap-nowrap {
+    flex-wrap: nowrap;
+}
+
+.flex-wrap-wrap {
+    flex-wrap: wrap;
+}
+
+.flex-wrap-wrap-reverse {
+    flex-wrap: wrap-reverse;
+}
+
+.flex-grow .one {
+    flex-grow: 1;
+}
+
+.flex-grow .two {
+    flex-grow: 2;
+    background-color: rgb(231, 155, 14);
+}
+
+.flex-grow .three {
+    flex-grow: 1;
+}
+
+.flex-shrink .two {
+    flex-shrink: 0;
+}
+
+.flex-basis .two {
+    flex-basis: 200px;
+}
+
+.order .one {
+    order: 3;
+}
+
+.order .two {
+    order: 1;
+}
+
+.order .three {
+    order: 2;
+}
+
+.container.align-self {
+    height: 270px;
+}
+
+.align-self-flex-start {
+    align-self: flex-start;
+}
+
+.align-self-center {
+    align-self: center;
+}
+
+.align-self-flex-end {
+    align-self: flex-end;
+}
+
+.align-self-auto {
+    align-self: auto;
+}
+
+.gap-small {
+    gap: 10px;
+}
+
+.gap-big {
+    gap: 20px;
+}
+
+.nav-bar {
+    background-color: rgba(11, 11, 43, 0.973);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 10px;
+}
+
+.nav-menu {
+    display: flex;
+    justify-content: space-between;
+}
+
+li {
+    list-style: none;
+    color: #fff;
+    text-decoration: none;
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+    padding-right: 20px;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: larger;
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.card {
+    flex: 1 1 300px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+
+}
+
+.card-top {
+    height: 150px;
+    background-color: #3469db;
+
+}
+
+.card-content {
+    padding: 20px;
+}
+
+.center-all {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(222, 218, 243, 0.26);
+    height: 200px;
+}
+
+.item {
+    background-color: rgba(0, 132, 255, 0.822);
+    align-content: center;
+    text-align: center;
+    width: auto;
+    padding: 20px;
+    color: #fff;
+}
