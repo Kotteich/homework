@@ -144,43 +144,46 @@ h2 {
     overflow: scroll;
 }
 
-.padding-box, .border-box, .content-box {
+.padding-box,
+.border-box,
+.content-box {
     background-color: #dab008;
     color: black;
     padding: 30px;
     border: 10px dashed rgba(255, 0, 0, 0.637);
-border-radius: 0;
+    border-radius: 0;
 }
 
 .padding-box {
     background-clip: padding-box;
 }
+
 .border-box {
-     background-clip: border-box;
+    background-clip: border-box;
 }
 
 .content-box {
-     background-clip: content-box;
+    background-clip: content-box;
 }
 
 .bg-many {
     background:
-  url('cat.png') left top no-repeat,
-  url('cat2.png') right top no-repeat,
-  url('cat3.png') left bottom no-repeat,
-  url('cat4.png') right bottom no-repeat,
-  linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(236, 240, 241, 0.9));
-height: 1000px;
-width: 1000px;
-color: #fff;
+        url('cat.png') left top no-repeat,
+        url('cat2.png') right top no-repeat,
+        url('cat3.png') left bottom no-repeat,
+        url('cat4.png') right bottom no-repeat,
+        linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(236, 240, 241, 0.9));
+    height: 1000px;
+    width: 1000px;
+    color: #fff;
 }
 
 .text-color {
     background: linear-gradient(45deg, #ff7e5f, #feb47b, #2ecc71, #3498db);
-                -webkit-background-clip: text;
-                background-clip: text;
-                color: transparent;
-                font-size: 50px;
-                text-align: center;
-                font-weight: bold;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-size: 50px;
+    text-align: center;
+    font-weight: bold;
 }
