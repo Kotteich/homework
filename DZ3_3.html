@@ -1,25 +1,27 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Фоны в CSS - Комбинированный пример</title>
     <link rel="stylesheet" href="DZ3_3style.css">
-    </head>
+</head>
+
 <body>
     <div>
         <h1>Фоны в CSS - Комбинированный пример</h1>
-        
+
         <!-- 1. Сплошной цвет фона -->
-        <section class="bgc-solid">
+        <section class="bgc-solid-container">
             <h2>1. Сплошной цвет фона (background-color)</h2>
             <p>Элемент с заданным сплошным цветом фона.</p>
-            <div class="bgc-solid-1">background-color: #3498db;</div>
-            <div class="bgc-solid-2">background-color: #3498db</div>
-            <div class="bgc-solid-3">background-color: rgba(231, 76, 60, 0.7)</div>
-            <div class="bgc-solid-4">background-color: hsl(120, 76%, 50%)</div>
+            <div class="bgc-solid one">background-color: #3498db;</div>
+            <div class="bgc-solid two">background-color: #3498db</div>
+            <div class="bgc-solid three">background-color: rgba(231, 76, 60, 0.7)</div>
+            <div class="bgc-solid four">background-color: hsl(120, 76%, 50%)</div>
         </section>
-        
+
         <!-- 2. Фоновое изображение -->
         <section class="block">
             <h2 class="bg-image-header">2. Фоновое изображение (background-image)</h2>
@@ -30,7 +32,7 @@
                 background-position: center;
             </div>
         </section>
-        
+
         <!-- 3. Градиентный фон -->
         <section class="bg-gradient">
             <h2>3. Градиентный фон (linear-gradient)</h2>
@@ -39,9 +41,9 @@
             <div class="bg-linear-gradient2">linear-gradient(to right, #3498db, #2ecc71)</div>
             <div class="bg-linear-gradient3">radial-gradient(circle, #3498db, #2c3e50)</div>
         </section>
-        
+
         <!-- 4. Повторение фона -->
-        <section>
+        <section class="bg-repeat-container">
             <h2>4. Повторение фона (background-repeat)</h2>
             <p>Элемент с повторяющимся фоновым изображением (паттерн).</p>
             <div class="bg-repeat">
@@ -50,7 +52,7 @@
             </div>
             <p>Также доступны значения: repeat-x, repeat-y, no-repeat, space, round</p>
         </section>
-        
+
         <!-- 5. Позиционирование фона -->
         <section>
             <h2>5. Позиционирование фона (background-position)</h2>
@@ -61,23 +63,25 @@
                 background-position: right bottom;
             </div>
         </section>
-        
+
         <!-- 6. Размер фона -->
-        <section class="block">
+        <section class="block bg-size">
             <h2>6. Размер фона (background-size)</h2>
-            <p>Элемент с фоновым изображением, которое масштабируется с помощью background-size: cover (заполняет весь элемент).</p>
+            <p>Элемент с фоновым изображением, которое масштабируется с помощью background-size: cover (заполняет весь
+                элемент).</p>
             <div class="bg-size-cover">background-size: cover;</div>
         </section>
-        
-        <section>
+
+        <section class="bg-contain">
             <h3>background-size: contain</h3>
-            <p>Элемент с фоновым изображением, которое масштабируется с помощью background-size: contain (вписывается в элемент).</p>
-            <div class="bg-size-contain1">background-size: contain;</div>
-            <div class="bg-size-contain2">
+            <p>Элемент с фоновым изображением, которое масштабируется с помощью background-size: contain (вписывается в
+                элемент).</p>
+            <div class="bg-size-contain-example">background-size: contain;</div>
+            <div class="bg-size-contain">
                 background-size: contain
             </div>
         </section>
-        
+
         <!-- 7. Фиксация фона -->
         <section class="block">
             <h2>7. Фиксация фона (background-attachment)</h2>
@@ -88,31 +92,31 @@
                 background-size: cover;
             </div>
         </section>
-        
+
         <!-- 8. Обрезка фона -->
         <section>
             <h2>8. Обрезка фона (background-clip)</h2>
             <p>Определяет, как фон распространяется под границами и отступами.</p>
-            
+
             <h3>border-box (по умолчанию)</h3>
-            <div class="bg-border-box">
+            <div class="bg-clip border-box">
                 <p>Фон распространяется под границами.</p>
-                <div>background-clip: border-box;</div>
+                <div class="bg-clip">background-clip: border-box;</div>
             </div>
-            
+
             <h3>padding-box</h3>
-            <div class="bg-padding-box">
+            <div class="bg-clip padding-box">
                 <p>Фон обрезается по внутреннему краю границы.</p>
-                <div>background-clip: padding-box;</div>
+                <div class="bg-clip">background-clip: padding-box;</div>
             </div>
-            
+
             <h3>content-box</h3>
-            <div class="bg-content-box">
+            <div class="bg-clip content-box">
                 <p>Фон обрезается по контенту.</p>
-                <div>background-clip: content-box;</div>
+                <div class="bg-clip">background-clip: content-box;</div>
             </div>
         </section>
-        
+
         <!-- 9. Множественные фоны -->
         <section class="block">
             <h2>9. Множественные фоны</h2>
@@ -126,7 +130,7 @@
                 &nbsp;&nbsp;linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(236, 240, 241, 0.9));
             </div>
         </section>
-        
+
         <!-- 10. Фон для текста -->
         <section>
             <h2>10. Фон для текста (background-clip: text)</h2>
@@ -141,4 +145,5 @@
         </section>
     </div>
 </body>
+
 </html>
