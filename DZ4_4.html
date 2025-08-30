@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content-width="device-width, initial-scale=1.0">
+    <title>Flexbox: Макет «Святой Грааль»</title>
+    <link rel="stylesheet" href="DZ4_4style.css">
+    </head>
+<body>
+
+    <div class="container">
+
+        <header class="header">
+            <h1>Шапка сайта</h1>
+        </header>
+
+        <div class="content">
+            <aside class="nav-bar">
+                <h3>Левая панель</h3>
+                <p>Навигация</p>
+            </aside>
+
+            <main class="main">
+                <h2>Основной контент</h2>
+                <p>Этот блок будет растягиваться, чтобы заполнить всё доступное пространство между боковыми панелями. Если контента на странице будет мало, `flex-grow` на родительском блоке `.main-content` всё равно заставит его занять всю высоту окна, и футер останется внизу.</p>
+            </main>
+
+            <aside class="side-bar">
+                <h3>Правая панель</h3>
+                <p>Реклама</p>
+            </aside>
+        </div>
+
+        <footer class="footer">
+            <p>Подвал сайта © 2025</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
