@@ -21,9 +21,24 @@ html {
     gap: 10px;
 }
 
+a {
+    text-decoration: none;
+    color: #fff;
+}
 
 .burger {
     display: none;
+    color: #fff;
+    font-size: 3rem;
+    margin: 15px;
 }
 
+@media (max-width: 768px) {
+    .burger {
+        display: flex;
+    }
 
+    .nav-bar {
+        display: none;
+    }
+}
