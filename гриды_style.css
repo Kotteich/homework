@@ -1,0 +1,22 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #d2ecf04d;
+    margin: 0;
+}
+
+section {
+    background-color: #fff;
+    margin: 20px;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.192);
+}
+
+.one, .two, .three, .four, .five, .six, .seven, .eight
+
+
+
+.base-grid {
+    display: grid;
+    grid-template-columns: 100px 100px 100px;
+}

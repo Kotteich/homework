@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Grid Layout</title>
+    <style>
+        /* Базовые стили */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+        
+        section {
+            margin-bottom: 40px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .grid-item {
+            padding: 20px;
+            color: white;
+            font-weight: bold;
+            text-align: center;
+            border-radius: 5px;
+        }
+        
+        /* Цвета для наглядности */
+        .grid-item:nth-child(1) { background-color: #3498db; }
+        .grid-item:nth-child(2) { background-color: #e74c3c; }
+        .grid-item:nth-child(3) { background-color: #2ecc71; }
+        .grid-item:nth-child(4) { background-color: #f1c40f; color: #333; }
+        .grid-item:nth-child(5) { background-color: #9b59b6; }
+        .grid-item:nth-child(6) { background-color: #e67e22; }
+        .grid-item:nth-child(7) { background-color: #1abc9c; }
+        .grid-item:nth-child(8) { background-color: #34495e; }
+        
+        /* 1. Базовый грид */
+        .basic-grid {
+            display: grid;
+            grid-template-columns: 100px 100px 100px;
+            grid-template-rows: 100px 100px;
+            gap: 10px;
+            margin-bottom: 20px;
+            border: 2px dashed #3498db;
+            padding: 10px;
+        }
+        
+        /* 2. Гибкие единицы fr */
+        .fr-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr 1fr;
+            gap: 10px;
+            margin-bottom: 20px;
+            border: 2px dashed #3498db;
+            padding: 10px;
+        }
+        
+        /* 3. Функция repeat() */
+        .repeat-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 100px);
+            grid-template-rows: repeat(2, 80px);
+            gap: 15px;
+            margin-bottom: 20px;
+            border: 2px dashed #3498db;
+            padding: 10px;
+        }
+        
+        /* 4. Автоматическое размещение */
+        .auto-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 10px;
+            margin-bottom: 20px;
+            border: 2px dashed #3498db;
+            padding: 10px;
+        }
+        
+        /* 5. Позиционирование элементов */
+        .positioning-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, 100px);
+            gap: 10px;
+            margin-bottom: 20px;
+            border: 2px dashed #3498db;
+            padding: 10px;
+        }
+        
+        .positioned-item {
+            grid-column: 2 / 4;
+            grid-row: 1 / 3;
+            background-color: rgba(231, 76, 60, 0.8);
+            z-index: 1;
+        }
+        
+        /* 6. Именованные области */
+        .areas-grid {
+            display: grid;
+            grid-template-areas:
+                "header header header"
+                "sidebar content content"
+                "footer footer footer";
+            grid-template-rows: 80px 1fr 60px;
+            grid-template-columns: 200px 1fr;
+            gap: 10px;
+            min-height: 400px;
+            margin-bottom: 20px;
+            border: 2px dashed #3498db;
+            padding: 10px;
+        }
+        
+        .header {
+            grid-area: header;
+            background-color: #3498db;
+        }
+        
+        .sidebar {
+            grid-area: sidebar;
+            background-color: #2ecc71;
+        }
+        
+        .content {
+            grid-area: content;
+            background-color: #f1c40f;
+            color: #333;
+        }
+        
+        .footer {
+            grid-area: footer;
+            background-color: #9b59b6;
+        }
+        
+        /* 7. Выравнивание */
+        .alignment-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 100px);
+            grid-template-rows: repeat(3, 100px);
+            gap: 10px;
+            height: 400px;
+            margin-bottom: 20px;
+            border: 2px dashed #3498db;
+            padding: 10px;
+        }
+        
+        .justify-items-center {
+            justify-items: center;
+        }
+        
+        .align-items-center {
+            align-items: center;
+        }
+        
+        .self-start {
+            align-self: start;
+            justify-self: start;
+        }
+        
+        .self-end {
+            align-self: end;
+            justify-self: end;
+        }
+        
+        /* 8. Неявные гриды */
+        .implicit-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-auto-rows: 80px;
+            gap: 10px;
+            margin-bottom: 20px;
+            border: 2px dashed #3498db;
+            padding: 10px;
+        }
+        
+        /* Практические примеры */
+        .photo-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .photo {
+            height: 150px;
+            background-color: #ddd;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        
+        .photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .pricing-card {
+            background-color: white;
+            border-radius: 5px;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .pricing-card h3 {
+            margin-top: 0;
+            color: #3498db;
+        }
+        
+        /* 12-колоночная сетка */
+        .twelve-column-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .span-4 {
+            grid-column: span 4;
+            background-color: #3498db;
+            padding: 15px;
+            color: white;
+        }
+        
+        .span-6 {
+            grid-column: span 6;
+            background-color: #e74c3c;
+            padding: 15px;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>CSS Grid Layout</h1>
+    
+    <!-- 1. Базовый грид -->
+    <section>
+        <h2>1. Базовый грид</h2>
+        <p>Простая сетка 3×2 с фиксированными размерами:</p>
+        <div class="basic-grid">
+            <div class="grid-item">1</div>
+            <div class="grid-item">2</div>
+            <div class="grid-item">3</div>
+            <div class="grid-item">4</div>
+            <div class="grid-item">5</div>
+            <div class="grid-item">6</div>
+        </div>
+        <pre><code>grid-template-columns: 100px 100px 100px;
+grid-template-rows: 100px 100px;
+gap: 10px;</code></pre>
+    </section>
+    
+    <!-- 2. Гибкие единицы fr -->
+    <section>
+        <h2>2. Гибкие единицы (fr)</h2>
+        <p>Сетка с использованием гибких единиц измерения:</p>
+        <div class="fr-grid">
+            <div class="grid-item">1fr</div>
+            <div class="grid-item">2fr</div>
+            <div class="grid-item">1fr</div>
+        </div>
+        <pre><code>grid-template-columns: 1fr 2fr 1fr;</code></pre>
+    </section>
+    
+    <!-- 3. Функция repeat() -->
+    <section>
+        <h2>3. Функция repeat()</h2>
+        <p>Создание повторяющихся колонок и строк:</p>
+        <div class="repeat-grid">
+            <div class="grid-item">1</div>
+            <div class="grid-item">2</div>
+            <div class="grid-item">3</div>
+            <div class="grid-item">4</div>
+            <div class="grid-item">5</div>
+            <div class="grid-item">6</div>
+        </div>
+        <pre><code>grid-template-columns: repeat(3, 100px);
+grid-template-rows: repeat(2, 80px);</code></pre>
+    </section>
+    
+    <!-- 4. Автоматическое размещение -->
+    <section>
+        <h2>4. Автоматическое размещение</h2>
+        <p>Адаптивная сетка с автоматическим заполнением:</p>
+        <div class="auto-grid">
+            <div class="grid-item">1</div>
+            <div class="grid-item">2</div>
+            <div class="grid-item">3</div>
+            <div class="grid-item">4</div>
+            <div class="grid-item">5</div>
+            <div class="grid-item">6</div>
+            <div class="grid-item">7</div>
+            <div class="grid-item">8</div>
+        </div>
+        <pre><code>grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));</code></pre>
+    </section>
+    
+    <!-- 5. Позиционирование элементов -->
+    <section>
+        <h2>5. Позиционирование элементов</h2>
+        <p>Элементы могут занимать несколько ячеек:</p>
+        <div class="positioning-grid">
+            <div class="grid-item">1</div>
+            <div class="grid-item">2</div>
+            <div class="grid-item">3</div>
+            <div class="grid-item">4</div>
+            <div class="grid-item positioned-item">5 (grid-column: 2/4; grid-row: 1/3)</div>
+            <div class="grid-item">6</div>
+            <div class="grid-item">7</div>
+            <div class="grid-item">8</div>
+            <div class="grid-item">9</div>
+        </div>
+    </section>
+    
+    <!-- 6. Именованные области -->
+    <section>
+        <h2>6. Именованные области</h2>
+        <p>Создание макета с помощью именованных областей:</p>
+        <div class="areas-grid">
+            <div class="header grid-item">Header</div>
+            <div class="sidebar grid-item">Sidebar</div>
+            <div class="content grid-item">Content</div>
+            <div class="footer grid-item">Footer</div>
+        </div>
+        <pre><code>grid-template-areas:
+  "header header header"
+  "sidebar content content"
+  "footer footer footer";</code></pre>
+    </section>
+    
+    <!-- 7. Выравнивание -->
+    <section>
+        <h2>7. Выравнивание элементов</h2>
+        <p>Выравнивание элементов внутри ячеек:</p>
+        <div class="alignment-grid justify-items-center align-items-center">
+            <div class="grid-item">1</div>
+            <div class="grid-item self-start">2 (start)</div>
+            <div class="grid-item self-end">3 (end)</div>
+            <div class="grid-item">4</div>
+            <div class="grid-item">5</div>
+            <div class="grid-item">6</div>
+            <div class="grid-item">7</div>
+            <div class="grid-item">8</div>
+            <div class="grid-item">9</div>
+        </div>
+    </section>
+    
+    <!-- 8. Неявные гриды -->
+    <section>
+        <h2>8. Неявные гриды</h2>
+        <p>Автоматическое создание строк для дополнительных элементов:</p>
+        <div class="implicit-grid">
+            <div class="grid-item">1</div>
+            <div class="grid-item">2</div>
+            <div class="grid-item">3</div>
+            <div class="grid-item">4</div>
+            <div class="grid-item">5</div>
+            <div class="grid-item">6</div>
+            <div class="grid-item">7</div>
+        </div>
+        <pre><code>grid-template-columns: repeat(2, 1fr);
+grid-auto-rows: 80px;</code></pre>
+    </section>
+    
+    <!-- Практические примеры -->
+    <section>
+        <h2>Практические примеры</h2>
+        
+        <h3>Фотогалерея</h3>
+        <div class="photo-gallery">
+            <div class="photo"><img src="https://via.placeholder.com/300x200/3498db/ffffff" alt="Placeholder"></div>
+            <div class="photo"><img src="https://via.placeholder.com/300x200/e74c3c/ffffff" alt="Placeholder"></div>
+            <div class="photo"><img src="https://via.placeholder.com/300x200/2ecc71/ffffff" alt="Placeholder"></div>
+            <div class="photo"><img src="https://via.placeholder.com/300x200/f1c40f/333333" alt="Placeholder"></div>
+            <div class="photo"><img src="https://via.placeholder.com/300x200/9b59b6/ffffff" alt="Placeholder"></div>
+            <div class="photo"><img src="https://via.placeholder.com/300x200/e67e22/ffffff" alt="Placeholder"></div>
+        </div>
+        
+        <h3>Ценовые карточки</h3>
+        <div class="pricing-grid">
+            <div class="pricing-card">
+                <h3>Базовый</h3>
+                <p>$9.99/мес</p>
+                <p>10 проектов</p>
+                <p>5GB хранилища</p>
+            </div>
+            <div class="pricing-card">
+                <h3>Стандарт</h3>
+                <p>$19.99/мес</p>
+                <p>50 проектов</p>
+                <p>50GB хранилища</p>
+            </div>
+            <div class="pricing-card">
+                <h3>Премиум</h3>
+                <p>$29.99/мес</p>
+                <p>Неограниченно</p>
+                <p>100GB хранилища</p>
+            </div>
+        </div>
+        
+        <h3>12-колоночная сетка</h3>
+        <div class="twelve-column-grid">
+            <div class="span-4">Span 4</div>
+            <div class="span-4">Span 4</div>
+            <div class="span-4">Span 4</div>
+            <div class="span-6">Span 6</div>
+            <div class="span-6">Span 6</div>
+        </div>
+    </section>
+</body>
+</html>

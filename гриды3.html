@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Grid: Макет Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+            margin: 0;
+            color: #333;
+            box-sizing: border-box;
+        }
+
+        /* 1. Создаем Grid-контейнер для всей панели */
+        .dashboard-layout {
+            box-sizing: border-box;
+            display: grid;
+            min-height: 100vh;
+            
+            /* Определяем колонки: боковая панель 240px и остальное пространство */
+            grid-template-columns: 240px 1fr;
+            
+            /* Определяем строки: шапка 60px, основной контент и подвал 50px */
+            grid-template-rows: 60px 1fr 50px;
+
+            /* 2. "Рисуем" макет с помощью именованных областей */
+            grid-template-areas:
+                "header   header"
+                "sidebar  main"
+                "footer   footer";
+            
+            gap: 15px;
+            padding: 15px;
+        }
+        
+        /* 3. Каждому элементу присваиваем его имя из "карты" */
+        .dashboard-header  { grid-area: header; }
+        .dashboard-sidebar { grid-area: sidebar; }
+        .dashboard-main    { grid-area: main; }
+        .dashboard-footer  { grid-area: footer; }
+
+        /* Вложенная сетка для основного контента */
+        .dashboard-main {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: 300px 1fr;
+            grid-template-areas:
+                "chart chart chart"
+                "card1 card2 card3";
+            gap: 15px;
+        }
+
+        .main-chart { grid-area: chart; }
+        .stat-card-1 { grid-area: card1; }
+        .stat-card-2 { grid-area: card2; }
+        .stat-card-3 { grid-area: card3; }
+        
+        /* Стили для наглядности */
+        .dashboard-main > div {
+            box-sizing: border-box;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+
+        .dashboard-header, .dashboard-footer, .dashboard-sidebar {
+            box-sizing: border-box;
+            background-color: #2c3e50;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="dashboard-layout">
+        <div class="dashboard-header">Шапка</div>
+        <div class="dashboard-sidebar">Боковая панель</div>
+        
+        <div class="dashboard-main">
+            <div class="main-chart">Главный график</div>
+            <div class="stat-card-1">Статистика 1</div>
+            <div class="stat-card-2">Статистика 2</div>
+            <div class="stat-card-3">Статистика 3</div>
+        </div>
+
+        <div class="dashboard-footer">Подвал</div>
+    </div>
+
+</body>
+</html>

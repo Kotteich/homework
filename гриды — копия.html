@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Grid Layout</title>
+    <link rel="stylesheet" href="гриды_style.css">
+    </head>
+<body>
+    <h1>CSS Grid Layout</h1>
+    
+    <!-- 1. Базовый грид -->
+    <section>
+        <h2>1. Базовый грид</h2>
+        <p>Простая сетка 3×2 с фиксированными размерами:</p>
+        <div class="base-grid">
+            <div class="one">1</div>
+            <div class="two">2</div>
+            <div class="three">3</div>
+            <div class="four">4</div>
+            <div class="five">5</div>
+            <div class="six">6</div>
+        </div>
+        <pre><code>grid-template-columns: 100px 100px 100px;
+grid-template-rows: 100px 100px;
+gap: 10px;</code></pre>
+    </section>
+    
+    <!-- 2. Гибкие единицы fr -->
+    <section>
+        <h2>2. Гибкие единицы (fr)</h2>
+        <p>Сетка с использованием гибких единиц измерения:</p>
+        <div class="grid-flex">
+            <div class="one">1fr</div>
+            <div class="two">2fr</div>
+            <div class="three">1fr</div>
+        </div>
+        <pre><code>grid-template-columns: 1fr 2fr 1fr;</code></pre>
+    </section>
+    
+    <!-- 3. Функция repeat() -->
+    <section>
+        <h2>3. Функция repeat()</h2>
+        <p>Создание повторяющихся колонок и строк:</p>
+        <div class="grid-repeat">
+            <div class="one">1</div>
+            <div class="two">2</div>
+            <div class="three">3</div>
+            <div class="four">4</div>
+            <div class="five">5</div>
+            <div class="six">6</div>
+        </div>
+        <pre><code>grid-template-columns: repeat(3, 100px);
+grid-template-rows: repeat(2, 80px);</code></pre>
+    </section>
+    
+    <!-- 4. Автоматическое размещение -->
+    <section>
+        <h2>4. Автоматическое размещение</h2>
+        <p>Адаптивная сетка с автоматическим заполнением:</p>
+        <div class="auto">
+           <div class="one">1</div>
+            <div class="two">2</div>
+            <div class="three">3</div>
+            <div class="four">4</div>
+            <div class="five">5</div>
+            <div class="six">6</div>
+            <div class="seven">7</div>
+            <div class="eight">8</div>
+        </div>
+        <pre><code>grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));</code></pre>
+    </section>
+    
+    <!-- 5. Позиционирование элементов -->
+    <section>
+        <h2>5. Позиционирование элементов</h2>
+        <p>Элементы могут занимать несколько ячеек:</p>
+        <div class="position">
+            <div class="one">1</div>
+            <div class="two">2</div>
+            <div class="three">3</div>
+            <div class="four">4</div>
+            <div class="five">5 (grid-column: 2/4; grid-row: 1/3)</div>
+             <div class="six">6</div>
+            <div class="seven">7</div>
+            <div class="eight">8</div>
+            <div class="nine">9</div>
+        </div>
+    </section>
+    
+    <!-- 6. Именованные области -->
+    <section>
+        <h2>6. Именованные области</h2>
+        <p>Создание макета с помощью именованных областей:</p>
+        <div class="area">
+            <div>Header</div>
+            <div class="one">Sidebar</div>
+            <div class="two">Content</div>
+            <di class="three">Footer</div>
+        </div>
+        <pre><code>grid-template-areas:
+  "header header header"
+  "sidebar content content"
+  "footer footer footer";</code></pre>
+    </section>
+    
+    <!-- 7. Выравнивание -->
+    <section>
+        <h2>7. Выравнивание элементов</h2>
+        <p>Выравнивание элементов внутри ячеек:</p>
+        <div class="alignment">
+            <div class="one">1</div>
+            <div class="two">2 (start)</div>
+            <div class="three">3 (end)</div>
+            <div class="four">4</div>
+            <div class="five">5</div>
+             <div class="six">6</div>
+            <div class="seven">7</div>
+            <div class="eight">8</div>
+            <div class="nine">9</div>
+        </div>
+    </section>
+    
+    <!-- 8. Неявные гриды -->
+    <section>
+        <h2>8. Неявные гриды</h2>
+        <p>Автоматическое создание строк для дополнительных элементов:</p>
+        <div class="hidden">
+           <div class="one">1</div>
+            <div class="two">2</div>
+            <div class="three">3</div>
+            <div class="four">4</div>
+            <div class="five">5</div>
+            <div class="six">6</div>
+            <div class="seven">7</div>
+        </div>
+        <pre><code>grid-template-columns: repeat(2, 1fr);
+grid-auto-rows: 80px;</code></pre>
+    </section>
+    
+    <!-- Практические примеры -->
+    <section>
+        <h2>Практические примеры</h2>
+        
+        <h3>Фотогалерея</h3>
+        <div>
+            <div><img src="https://via.placeholder.com/300x200/3498db/ffffff" alt="Placeholder"></div>
+            <div><img src="https://via.placeholder.com/300x200/e74c3c/ffffff" alt="Placeholder"></div>
+            <div><img src="https://via.placeholder.com/300x200/2ecc71/ffffff" alt="Placeholder"></div>
+            <div><img src="https://via.placeholder.com/300x200/f1c40f/333333" alt="Placeholder"></div>
+            <div><img src="https://via.placeholder.com/300x200/9b59b6/ffffff" alt="Placeholder"></div>
+            <div><img src="https://via.placeholder.com/300x200/e67e22/ffffff" alt="Placeholder"></div>
+        </div>
+        
+        <h3>Ценовые карточки</h3>
+        <div>
+            <div>
+                <h3>Базовый</h3>
+                <p>$9.99/мес</p>
+                <p>10 проектов</p>
+                <p>5GB хранилища</p>
+            </div>
+            <div>
+                <h3>Стандарт</h3>
+                <p>$19.99/мес</p>
+                <p>50 проектов</p>
+                <p>50GB хранилища</p>
+            </div>
+            <div>
+                <h3>Премиум</h3>
+                <p>$29.99/мес</p>
+                <p>Неограниченно</p>
+                <p>100GB хранилища</p>
+            </div>
+        </div>
+        
+        <h3>12-колоночная сетка</h3>
+        <div>
+            <div>Span 4</div>
+            <div>Span 4</div>
+            <div>Span 4</div>
+            <div>Span 6</div>
+            <div>Span 6</div>
+        </div>
+    </section>
+</body>
+</html>
