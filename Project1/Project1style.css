@@ -563,7 +563,8 @@ footer {
     display: flex;
     height: 204px;
     background-color: #F7F7F7;
-    margin: 0;
+    margin: 0 auto;
+    width: 1440px;
 }
 
 .footer {
