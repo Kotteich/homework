@@ -31,11 +31,11 @@ section {
     font-weight: bold;
 }
 
-.one {
+.one, .span-one {
     background-color: rgb(11, 85, 221);
 }
 
-.two {
+.two, .span-two {
     background-color: red;
 }
 
@@ -208,6 +208,49 @@ section {
 grid-auto-rows: 80px;
 }
 
+.item {
+background-color: #919191c2;
+padding: 15px;
+border-radius: 5px;
+min-height: 150px;
+}
+
+
 .gallery {
-    
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+
+.container {
+     display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+
+.card {
+    text-align: center;
+}
+
+.columns {
+      display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(12, 1fr);
+}
+
+.span-one, .span-two {
+    border-radius: 5%;
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+
+    font-weight: bold;
+}
+
+.span-one {
+    grid-column: span 4;
+}
+
+.span-two {
+    grid-column: span 6;
 }
