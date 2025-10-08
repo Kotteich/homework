@@ -1,1 +1,51 @@
+@import url(https://fonts.google.com/specimen/Nunito+Sans);
+
+:root {
+    
+}
+
+body {
+    font-family: "Nunito Sans", sans-serif;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.part-of {
+    background-color:#010101;
+    height: 53px;
+    display: flex;
+    justify-content: space-between;
+    color: #FFFFFF;
+}
+
+.header-top-left, .telephone, .email {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    
+}
+
+.call {
+    margin-right: 300px;
+}
+
+.header-top-left {
+    gap: 24px;
+    margin-left: 300px;
+}
+
+.tel-icon, .email-icon {
+    width: 20px;
+    height: 20px;
+}
+
+.header-top>a {
+    text-decoration: none;
+    color: #4F8FF0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 
